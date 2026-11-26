@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security &amp; Architecture Statement – PII &amp; Secret Shield (BK-Tools)</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 780px; margin: 40px auto; padding: 0 20px; color: #1f2937; line-height: 1.65; }
+    h1, h2 { color: #111827; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Security &amp; Data Residency Statement</h1>
+  <p><strong>App:</strong> PII &amp; Secret Shield for Jira (by BK-Tools)</p>
+
+  <h2>1. Runs on Atlassian Architecture</h2>
+  <ul>
+    <li><strong>Compute:</strong> 100% Atlassian Forge serverless runtime (<code>nodejs22.x</code>).</li>
+    <li><strong>Storage:</strong> 100% Atlassian Forge KVS (<code>storage:app</code>), isolated per customer installation.</li>
+    <li><strong>External Network Egress:</strong> None (no <code>external.fetch</code> or Forge Remote permissions).</li>
+    <li><strong>External AI / LLMs:</strong> None. All detection is 100% deterministic (ISO 7064 Mod-97 IBAN validation, Luhn credit card checksums, bounded high-precision secret rules).</li>
+  </ul>
+
+  <h2>2. Least-Privilege Scopes</h2>
+  <ul>
+    <li><code>read:jira-work</code> – scan issue summaries, descriptions, and comments.</li>
+    <li><code>write:jira-work</code> – replace detected PII/secrets in-place with <code>[REDACTED:CATEGORY]</code> and strip sensitive <code>mailto:</code> links when redaction is triggered.</li>
+    <li><code>storage:app</code> – store admin settings and masked audit metadata inside Atlassian Forge KVS.</li>
+  </ul>
+
+  <h2>3. Safe Audit Logging</h2>
+  <p>Raw PII and API secrets are never written to console logs or Forge KVS. Only masked representations (e.g. <code>DE89****3000</code>) and category counts are shown or logged.</p>
+
+  <h2>4. Vulnerability Reporting</h2>
+  <p>Report security issues directly to BK-Tools at <strong>b.kuertuel@gmail.com</strong>.</p>
+</body>
+</html>

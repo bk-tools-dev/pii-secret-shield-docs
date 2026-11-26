@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PII &amp; Secret Shield for Jira – Documentation (BK-Tools)</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 48px auto; padding: 0 20px; color: #1f2937; line-height: 1.65; }
+    .hdr { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .hdr img { width: 64px; height: 64px; border-radius: 14px; }
+    h1 { margin: 0; font-size: 26px; color: #111827; }
+    .sub { margin: 4px 0 0; color: #4b5563; }
+    .badge { display: inline-block; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+    .links { display: grid; gap: 12px; margin: 24px 0; }
+    .card { display: block; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 20px; text-decoration: none; color: #111827; }
+    .card:hover { border-color: #2563eb; background: #f8fafc; }
+    .card strong { display: block; font-size: 16px; color: #1d4ed8; }
+    .card span { font-size: 14px; color: #4b5563; }
+  </style>
+</head>
+<body>
+  <div class="hdr">
+    <img src="./app-logo-144.png" alt="PII &amp; Secret Shield Logo" />
+    <div>
+      <h1>PII &amp; Secret Shield for Jira</h1>
+      <p class="sub">Documentation &amp; Legal Trust Center — by BK-Tools</p>
+    </div>
+  </div>
+  <div class="badge">Runs on Atlassian • Zero External Data Egress • Zero Personal Data Stored</div>
+
+  <p>
+    Automatically detect and redact exposed customer PII (IBANs with ISO 7064 Mod-97 validation, Luhn credit cards, external emails, phone numbers) and leaked API secrets (AWS, Stripe, GitHub, Slack, JWTs, Private Keys, passwords, and custom company prefixes) natively inside Jira Cloud.
+  </p>
+
+  <div class="links">
+    <a class="card" href="./privacy.html">
+      <strong>Privacy Policy</strong>
+      <span>Zero external data egress, zero subprocessors, zero personal data stored.</span>
+    </a>
+    <a class="card" href="./security.html">
+      <strong>Security &amp; Data Residency Statement</strong>
+      <span>Runs on Atlassian architecture, least-privilege scopes, deterministic detection.</span>
+    </a>
+    <a class="card" href="./terms.html">
+      <strong>Terms of Use / EULA</strong>
+      <span>Licensing, customer responsibility, and Atlassian Marketplace terms.</span>
+    </a>
+    <a class="card" href="https://github.com/bk-tools-dev/pii-secret-shield-docs/issues">
+      <strong>Support &amp; Issue Tracker</strong>
+      <span>Report bugs, request custom detectors, or ask setup questions asynchronously.</span>
+    </a>
+  </div>
+</body>
+</html>

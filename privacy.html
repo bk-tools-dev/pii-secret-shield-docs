@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – PII &amp; Secret Shield for Jira (BK-Tools)</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 780px; margin: 40px auto; padding: 0 20px; color: #1f2937; line-height: 1.65; }
+    h1, h2 { color: #111827; }
+    .box { background: #ecfdf5; border: 1px solid #a7f3d0; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy – PII &amp; Secret Shield for Jira</h1>
+  <p><strong>Vendor:</strong> BK-Tools<br /><strong>Last updated:</strong> November 2026</p>
+
+  <div class="box">
+    <strong>Zero External Data Egress ("Runs on Atlassian"):</strong> PII &amp; Secret Shield runs 100% natively on Atlassian Forge infrastructure. Customer ticket data never leaves your Atlassian Cloud instance and is never transmitted to BK-Tools servers or any third-party AI/LLM provider.
+  </div>
+
+  <h2>1. Data Accessed</h2>
+  <p>When installed in Jira Cloud, the app accesses issue summaries, descriptions, and comments strictly via Atlassian's authorized Jira REST API (<code>read:jira-work</code>, <code>write:jira-work</code>) solely to detect and redact sensitive PII and API secrets.</p>
+
+  <h2>2. Data Storage (Zero Personal Data Stored)</h2>
+  <p>Configuration settings (auto-redact toggle, ignored internal email domains, custom prefixes, retention threshold) and a strictly anonymous audit log (timestamp, issue key, action type such as <code>manual-panel</code> or <code>retention-scheduler</code>, category counts — <strong>never user account IDs, raw secrets, or unmasked PII</strong>) are stored exclusively within your installation's isolated Atlassian Forge Key-Value Store (<code>storage:app</code>).</p>
+
+  <h2>3. Third-Party Subprocessors</h2>
+  <p>None. The app declares zero external network egress permissions in its Forge manifest. All compute and storage reside within Atlassian Cloud under your existing Atlassian Data Residency and Data Processing Addendum.</p>
+
+  <h2>4. Data Retention &amp; Deletion</h2>
+  <p>Uninstalling the app from your Jira Cloud site automatically removes app access, and Forge-hosted app storage follows Atlassian's standard app data lifecycle. Audit log entries stored in Forge KVS are capped at the 100 most recent masked events.</p>
+
+  <h2>5. Contact</h2>
+  <p>For privacy inquiries or GDPR requests, contact BK-Tools via email at <strong>b.kuertuel@gmail.com</strong> (update to your dedicated support email prior to commercial launch).</p>
+</body>
+</html>
